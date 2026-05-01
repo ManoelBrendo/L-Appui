@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -22,7 +22,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="#" class="logo" aria-label="L'Appui início">
-          <span class="logo-mark" aria-hidden="true">LA</span>
+          <span class="logo-mark" aria-hidden="true"><img src="lappui-mark.svg" alt="" /></span>
           <span>L'Appui</span>
         </a>
 
@@ -97,18 +97,29 @@
             <div class="app-mockup">
               <aside class="app-sidebar">
                 <div class="app-brand">
-                  <span class="app-brand-mark">LA</span>
-                  <strong>L'Appui</strong>
+                  <span class="app-brand-mark"><img src="lappui-mark.svg" alt="" /></span>
+                  <div>
+                    <strong>L'Appui</strong>
+                    <small>Plataforma L'Appui</small>
+                  </div>
+                </div>
+                <div class="sidebar-clinic-card">
+                  <span>Clínica ativa</span>
+                  <strong>Clínica Harmonia</strong>
+                  <p>Agenda, clientes, documentos e financeiro em um fluxo único.</p>
+                  <em>Pagamento em dia</em>
                 </div>
                 <nav>
-                  <span class="active">Dashboard</span>
-                  <span>Agenda</span>
+                  <span class="active">Painel Clínico</span>
                   <span>Clientes</span>
-                  <span>Prontuários</span>
+                  <span>Agendamentos</span>
+                  <span>Serviços</span>
+                  <span>Profissionais</span>
                   <span>Documentos</span>
-                  <span>Estoque</span>
-                  <span>Financeiro</span>
+                  <span>Produtos e Equipamentos</span>
+                  <span>Intercorrências</span>
                   <span>Auditoria</span>
+                  <span>Assinatura e contas</span>
                 </nav>
               </aside>
 
@@ -116,31 +127,34 @@
                 <div class="app-topline">
                   <div>
                     <span class="micro-label">Visão da clínica</span>
-                    <h2>Painel operacional</h2>
+                    <h2>Boa tarde, Clínica Harmonia</h2>
                   </div>
-                  <span class="status-badge status-ok">Conformidade 94%</span>
+                  <span class="status-badge status-ok">Operação ativa</span>
                 </div>
 
                 <div class="kpi-grid">
                   <article>
-                    <span>Atendimentos hoje</span>
+                    <span>Hoje</span>
                     <strong>14</strong>
+                    <small>Atendimentos agendados</small>
                   </article>
                   <article>
                     <span>Receita prevista</span>
                     <strong>R$ 8.240</strong>
+                    <small>Agenda vinculada ao caixa</small>
                   </article>
                   <article>
-                    <span>Pendências críticas</span>
+                    <span>Alertas</span>
                     <strong class="danger-text">3</strong>
+                    <small>Documentos e inventário</small>
                   </article>
                 </div>
 
                 <div class="workspace-grid">
                   <section class="panel panel-large">
                     <div class="panel-head">
-                      <strong>Agenda vinculada ao financeiro</strong>
-                      <span>Hoje</span>
+                      <strong>Próximos atendimentos</strong>
+                      <span class="badge-like">Hoje</span>
                     </div>
                     <div class="table-row table-head">
                       <span>Cliente</span><span>Serviço</span><span>Status</span><span>Pagamento</span>
@@ -158,8 +172,8 @@
 
                   <section class="panel">
                     <div class="panel-head">
-                      <strong>Documentos</strong>
-                      <span>Alertas</span>
+                      <strong>Documentos e compliance</strong>
+                      <span class="badge-like gold">Alertas</span>
                     </div>
                     <div class="mini-alert danger"><span></span> Alvará vencido</div>
                     <div class="mini-alert warn"><span></span> Licença vence em 18 dias</div>
@@ -169,7 +183,7 @@
                   <section class="panel">
                     <div class="panel-head">
                       <strong>Estoque e aparelhos</strong>
-                      <span>Controle</span>
+                      <span class="badge-like muted">Controle</span>
                     </div>
                     <div class="progress-line"><span style="width: 72%"></span></div>
                     <p class="panel-note">2 lotes próximos do vencimento e 1 manutenção pendente.</p>
@@ -442,7 +456,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <a href="#" class="logo">
-          <span class="logo-mark" aria-hidden="true">LA</span>
+          <span class="logo-mark" aria-hidden="true"><img src="lappui-mark.svg" alt="" /></span>
           <span>L'Appui</span>
         </a>
         <div class="footer-links">
