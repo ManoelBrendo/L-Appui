@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="L'Appui: gestão clínica, prontuários, agenda, documentos, estoque, financeiro e compliance com rastreabilidade para clínicas de estética."
+      content="L'Appui: gestão operacional para clínicas de estética com agenda, prontuários, documentos, estoque, financeiro e auditoria."
     />
-    <title>L'Appui | Gestão clínica e compliance para clínicas de estética</title>
+    <title>L'Appui — Gestão Operacional para Clínicas de Estética</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -19,452 +19,522 @@
   <body>
     <a class="sr-only" href="#conteudo-principal">Ir para o conteúdo</a>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="#" class="logo" aria-label="L'Appui início">
-          <span class="logo-mark" aria-hidden="true"><img src="lappui-mark.svg" alt="" /></span>
-          <span>L'Appui</span>
-        </a>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="#" class="nav-logo" aria-label="L'Appui início">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4" />
+            <path d="M5 15h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            <path d="M9 12v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            <path d="M6 7h6" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.62" />
+            <path d="M6 9.5h3.5" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.62" />
+          </svg>
+        </span>
+        <span class="logo-name">L'Appui</span>
+      </a>
 
-        <nav class="nav-desktop" aria-label="Principal">
-          <a href="#dores">Operação</a>
-          <a href="#produto">Produto</a>
-          <a href="#modulos">Módulos</a>
-          <a href="#alertas">Alertas</a>
-          <a href="#responsabilidade">Confiança</a>
-        </nav>
+      <ul class="nav-links">
+        <li><a href="#modulos">Módulos</a></li>
+        <li><a href="#auditoria">Auditoria</a></li>
+        <li><a href="#produto">Produto</a></li>
+        <li><a href="#demo" class="nav-cta">Solicitar demonstração</a></li>
+      </ul>
 
-        <div class="header-actions">
-          <a class="btn btn-ghost" href="#modulos">Ver funcionalidades</a>
-          <a class="btn btn-primary" href="#contato">Solicitar demonstração</a>
-          <button
-            type="button"
-            class="menu-toggle"
-            id="menu-btn"
-            aria-expanded="false"
-            aria-controls="nav-mobile"
-          >
-            <span></span><span></span><span></span>
-            <span class="sr-only">Abrir menu</span>
-          </button>
-        </div>
-      </div>
+      <button type="button" class="menu-toggle" id="menu-btn" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+    </nav>
 
-      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
-        <a href="#dores">Operação</a>
-        <a href="#produto">Produto</a>
-        <a href="#modulos">Módulos</a>
-        <a href="#alertas">Alertas</a>
-        <a href="#responsabilidade">Confiança</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#modulos">Módulos</a>
+      <a href="#auditoria">Auditoria</a>
+      <a href="#produto">Produto</a>
+      <a href="#demo">Solicitar demonstração</a>
+    </div>
 
     <main id="conteudo-principal">
-      <section class="hero section" aria-labelledby="hero-title">
-        <div class="section-inner hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">SaaS operacional para clínicas de estética</p>
-            <h1 id="hero-title">
-              Gestão clínica, prontuários e compliance para clínicas de estética em um só lugar.
-            </h1>
-            <p class="hero-subtitle">
-              O L'Appui organiza rotina clínica, clientes, documentos, agenda, estoque,
-              pagamentos e auditoria com rastreabilidade. Menos informação espalhada, mais
-              controle para a equipe provar organização e operar com segurança.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contato">Solicitar demonstração</a>
-              <a class="btn btn-champagne" href="#modulos">Ver funcionalidades</a>
+      <div class="hero-wrap">
+        <section class="hero">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              Gestão operacional para clínicas de estética
             </div>
-
-            <div class="hero-proof" aria-label="Resumo do que o sistema centraliza">
-              <span>Prontuários</span>
-              <span>Agenda</span>
-              <span>Documentos</span>
-              <span>Estoque</span>
-              <span>Financeiro</span>
+            <h1>Controle clínico com <em>clareza</em> e rastreabilidade</h1>
+            <p class="hero-sub">
+              O L'Appui centraliza agenda, prontuários, documentos, estoque, equipe e
+              pagamentos, com auditoria cruzada para mostrar o que precisa de atenção antes
+              que vire problema.
+            </p>
+            <div class="hero-modules-list" aria-label="Módulos do L'Appui">
+              <span class="module-chip">Auditoria</span>
+              <span class="module-chip">Agenda</span>
+              <span class="module-chip">Prontuário</span>
+              <span class="module-chip">Documentos</span>
+              <span class="module-chip">Estoque</span>
+              <span class="module-chip">Equipe</span>
+              <span class="module-chip">Pagamentos</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="#demo" class="btn-primary">Solicitar demonstração</a>
+              <a href="#modulos" class="btn-ghost">Ver módulos</a>
             </div>
           </div>
 
-          <div class="product-shell" aria-label="Mockup do painel L'Appui">
-            <div class="browser-bar">
-              <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <span>app.lappui.com.br / painel</span>
-            </div>
+          <div class="hero-visual" aria-label="Mockup do painel de auditoria do L'Appui">
+            <div class="dashboard-frame">
+              <div class="frame-bar">
+                <div class="frame-dot red"></div>
+                <div class="frame-dot yellow"></div>
+                <div class="frame-dot green"></div>
+                <span class="frame-title">L'Appui — Auditoria</span>
+              </div>
 
-            <div class="app-mockup">
-              <aside class="app-sidebar">
-                <div class="app-brand">
-                  <span class="app-brand-mark"><img src="lappui-mark.svg" alt="" /></span>
-                  <div>
-                    <strong>L'Appui</strong>
-                    <small>Plataforma L'Appui</small>
+              <div class="dashboard-inner">
+                <aside class="dash-sidebar">
+                  <div class="dash-sidebar-logo">
+                    <img src="lappui-mark.svg" alt="" />
+                    <span>L'Appui</span>
+                  </div>
+                  <div class="dash-nav-item active">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+                      <rect x="8" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+                      <rect x="1" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+                      <rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                    Auditoria
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <rect x="1.5" y="2" width="11" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M4 5h6M4 7.5h4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+                    </svg>
+                    Prontuário
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <rect x="1.5" y="1.5" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+                    </svg>
+                    Agenda
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M7 4v3.5l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                    Documentos
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <path d="M2 12V5l5-3 5 3v7" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+                      <rect x="5" y="8" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.1" />
+                    </svg>
+                    Estoque
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <circle cx="7" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                    Profissionais
+                  </div>
+                  <div class="dash-nav-item">
+                    <svg viewBox="0 0 14 14" fill="none">
+                      <rect x="1.5" y="3" width="9" height="7" rx="1" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M11 5l1.5-.5v5L11 9" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+                    </svg>
+                    Pagamentos
+                  </div>
+                </aside>
+
+                <div class="dash-main">
+                  <div class="dash-header">
+                    <span class="dash-title">Painel de Auditoria</span>
+                    <span class="dash-date">maio 2026</span>
+                  </div>
+                  <div class="audit-grid">
+                    <div class="audit-stat">
+                      <div class="audit-stat-label">Documentos vencidos</div>
+                      <div class="audit-stat-val alert">3</div>
+                    </div>
+                    <div class="audit-stat">
+                      <div class="audit-stat-label">Produtos a vencer</div>
+                      <div class="audit-stat-val warn">7</div>
+                    </div>
+                    <div class="audit-stat">
+                      <div class="audit-stat-label">Equipe regular</div>
+                      <div class="audit-stat-val ok">12</div>
+                    </div>
+                    <div class="audit-stat">
+                      <div class="audit-stat-label">Pendências críticas</div>
+                      <div class="audit-stat-val alert">2</div>
+                    </div>
+                  </div>
+                  <div class="alerts-list">
+                    <div class="alert-row">
+                      <span class="alert-dot red"></span>
+                      <span class="alert-text">Alvará sanitário vencido</span>
+                      <span class="alert-tag red">Urgente</span>
+                    </div>
+                    <div class="alert-row">
+                      <span class="alert-dot amber"></span>
+                      <span class="alert-text">Manutenção laser — 5 dias</span>
+                      <span class="alert-tag amber">Atenção</span>
+                    </div>
+                    <div class="alert-row">
+                      <span class="alert-dot amber"></span>
+                      <span class="alert-text">Consentimento pendente</span>
+                      <span class="alert-tag amber">Atenção</span>
+                    </div>
+                    <div class="alert-row">
+                      <span class="alert-dot green"></span>
+                      <span class="alert-text">Estoque radiofrequência ok</span>
+                      <span class="alert-tag green">Regular</span>
+                    </div>
                   </div>
                 </div>
-                <div class="sidebar-clinic-card">
-                  <span>Clínica ativa</span>
-                  <strong>Clínica Harmonia</strong>
-                  <p>Agenda, clientes, documentos e financeiro em um fluxo único.</p>
-                  <em>Pagamento em dia</em>
-                </div>
-                <nav>
-                  <span class="active">Painel Clínico</span>
-                  <span>Clientes</span>
-                  <span>Agendamentos</span>
-                  <span>Serviços</span>
-                  <span>Profissionais</span>
-                  <span>Documentos</span>
-                  <span>Produtos e Equipamentos</span>
-                  <span>Intercorrências</span>
-                  <span>Auditoria</span>
-                  <span>Assinatura e contas</span>
-                </nav>
-              </aside>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-              <div class="app-content">
-                <div class="app-topline">
+      <div class="divider"><hr /></div>
+
+      <section class="pains-section" id="dores">
+        <div class="pains-inner">
+          <div class="section-label">Realidade operacional</div>
+          <h2 class="section-title">O que acontece sem controle centralizado</h2>
+          <p class="section-sub">
+            Clínicas de estética acumulam responsabilidades operacionais silenciosas. Cada
+            área desconectada cria uma pendência que pode passar despercebida.
+          </p>
+
+          <div class="pains-grid">
+            <article class="pain-card">
+              <div class="pain-icon">!</div>
+              <h3 class="pain-title">Documentos vencidos sem alerta</h3>
+              <p class="pain-desc">Alvarás, certificados e habilitações expiram sem fila clara de ação.</p>
+            </article>
+            <article class="pain-card">
+              <div class="pain-icon">+</div>
+              <h3 class="pain-title">Agenda descentralizada</h3>
+              <p class="pain-desc">Conflitos de horário, ausências e pagamentos ficam fora do mesmo contexto.</p>
+            </article>
+            <article class="pain-card">
+              <div class="pain-icon">#</div>
+              <h3 class="pain-title">Prontuários espalhados</h3>
+              <p class="pain-desc">Anamneses, fotos e consentimentos sem registro formal ou rastreabilidade.</p>
+            </article>
+            <article class="pain-card">
+              <div class="pain-icon">%</div>
+              <h3 class="pain-title">Produtos vencendo sem controle</h3>
+              <p class="pain-desc">Insumos e cosméticos perdem validade sem notificação preventiva.</p>
+            </article>
+            <article class="pain-card">
+              <div class="pain-icon">$</div>
+              <h3 class="pain-title">Pagamentos sem clareza</h3>
+              <p class="pain-desc">Cobranças, inadimplência e assinatura sem visão consolidada.</p>
+            </article>
+            <article class="pain-card">
+              <div class="pain-icon">*</div>
+              <h3 class="pain-title">Sem visão do que é crítico</h3>
+              <p class="pain-desc">A equipe perde tempo procurando o que deveria aparecer no painel.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="modulos">
+        <div class="section-label">Sistema modular</div>
+        <h2 class="section-title">Todos os módulos da clínica em uma plataforma</h2>
+        <p class="section-sub">
+          Cada módulo opera de forma independente e se conecta aos demais para alimentar a
+          Auditoria com informações cruzadas.
+        </p>
+
+        <div class="modules-grid">
+          <article class="module-card">
+            <div class="module-icon-wrap">01</div>
+            <h3 class="module-name">Auditoria</h3>
+            <p class="module-desc">Cruza informações para exibir riscos, vencimentos e prioridades operacionais.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">02</div>
+            <h3 class="module-name">Prontuário</h3>
+            <p class="module-desc">Atendimentos, anamneses, evolução clínica, consentimentos e PDFs.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">03</div>
+            <h3 class="module-name">Agenda</h3>
+            <p class="module-desc">Horários, profissionais, serviços, status e pagamentos vinculados.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">04</div>
+            <h3 class="module-name">Documentos</h3>
+            <p class="module-desc">Alvarás, certificados, termos e obrigações com controle de validade.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">05</div>
+            <h3 class="module-name">Produtos e Equipamentos</h3>
+            <p class="module-desc">Estoque, validade de insumos, manutenção e garantia de equipamentos.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">06</div>
+            <h3 class="module-name">Profissionais</h3>
+            <p class="module-desc">Cadastro, disponibilidade, responsabilidades e documentação da equipe.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">07</div>
+            <h3 class="module-name">Serviços e POP</h3>
+            <p class="module-desc">Catálogo de procedimentos com operação padrão vinculada a cada serviço.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">08</div>
+            <h3 class="module-name">Pagamentos</h3>
+            <p class="module-desc">Cobranças, assinatura, vencimentos e visão financeira operacional.</p>
+          </article>
+          <article class="module-card">
+            <div class="module-icon-wrap">09</div>
+            <h3 class="module-name">Suporte</h3>
+            <p class="module-desc">Atendimento técnico com contexto e rastreabilidade para manutenção assistida.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="divider"><hr /></div>
+
+      <section class="audit-section" id="auditoria">
+        <div class="audit-inner">
+          <div>
+            <div class="section-label">Diferencial principal</div>
+            <h2 class="audit-right-title">A Auditoria que antecipa o que precisa de ação</h2>
+            <p class="audit-right-sub">
+              Em vez de verificar módulo por módulo, a Auditoria cruza informações da
+              clínica e entrega um painel único com o que é crítico, o que merece atenção e
+              o que está regular.
+            </p>
+            <div class="audit-crosses">
+              <div class="cross-item">Documentos da clínica e da equipe</div>
+              <div class="cross-item">Validade de produtos e insumos</div>
+              <div class="cross-item">Manutenção e calibração de equipamentos</div>
+              <div class="cross-item">Consentimentos e prontuários pendentes</div>
+              <div class="cross-item">Pagamentos em atraso ou a vencer</div>
+              <div class="cross-item">Cadastros profissionais incompletos</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="audit-list-label">Alertas da semana</div>
+            <div class="audit-alerts">
+              <article class="audit-alert-item danger">
+                <div class="audit-alert-icon">!</div>
+                <div class="audit-alert-content">
+                  <h3 class="audit-alert-title">Alvará sanitário vencido</h3>
+                  <p class="audit-alert-meta">Documentos · venceu há 3 dias</p>
+                </div>
+                <span class="audit-badge danger">Crítico</span>
+              </article>
+              <article class="audit-alert-item danger">
+                <div class="audit-alert-icon">!</div>
+                <div class="audit-alert-content">
+                  <h3 class="audit-alert-title">Produto vencido no estoque</h3>
+                  <p class="audit-alert-meta">Estoque · sérum ativo 2ml</p>
+                </div>
+                <span class="audit-badge danger">Crítico</span>
+              </article>
+              <article class="audit-alert-item warn">
+                <div class="audit-alert-icon">•</div>
+                <div class="audit-alert-content">
+                  <h3 class="audit-alert-title">Manutenção laser agendada</h3>
+                  <p class="audit-alert-meta">Equipamentos · vence em 5 dias</p>
+                </div>
+                <span class="audit-badge warn">Atenção</span>
+              </article>
+              <article class="audit-alert-item warn">
+                <div class="audit-alert-icon">•</div>
+                <div class="audit-alert-content">
+                  <h3 class="audit-alert-title">Consentimento pendente</h3>
+                  <p class="audit-alert-meta">Prontuário · preenchimento</p>
+                </div>
+                <span class="audit-badge warn">Atenção</span>
+              </article>
+              <article class="audit-alert-item ok">
+                <div class="audit-alert-icon">✓</div>
+                <div class="audit-alert-content">
+                  <h3 class="audit-alert-title">Equipe com documentação regular</h3>
+                  <p class="audit-alert-meta">Profissionais · 8 ativos</p>
+                </div>
+                <span class="audit-badge ok">Regular</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="estetica-section">
+          <div>
+            <div class="section-label">Pensado para estética</div>
+            <h2 class="section-title">Desenvolvido para a rotina de clínicas estéticas</h2>
+            <p class="section-sub">
+              O L'Appui não é um sistema genérico adaptado. Cada módulo considera o fluxo
+              real de uma clínica estética, do atendimento recorrente à rastreabilidade
+              documental.
+            </p>
+          </div>
+
+          <div class="estetica-list">
+            <div class="estetica-item">
+              <span class="estetica-num">01</span>
+              <div class="estetica-text">
+                <strong>Atendimento recorrente</strong>
+                <span>Histórico de sessões, protocolos e evolução de cada cliente.</span>
+              </div>
+            </div>
+            <div class="estetica-item">
+              <span class="estetica-num">02</span>
+              <div class="estetica-text">
+                <strong>Prontuário e anamnese estruturados</strong>
+                <span>Campos para contraindicações, reações e observações clínicas.</span>
+              </div>
+            </div>
+            <div class="estetica-item">
+              <span class="estetica-num">03</span>
+              <div class="estetica-text">
+                <strong>Consentimento e evidências</strong>
+                <span>Termos digitais vinculados ao prontuário e ao atendimento.</span>
+              </div>
+            </div>
+            <div class="estetica-item">
+              <span class="estetica-num">04</span>
+              <div class="estetica-text">
+                <strong>Rastreabilidade operacional</strong>
+                <span>Procedimento, produto, profissional e histórico no mesmo contexto.</span>
+              </div>
+            </div>
+            <div class="estetica-item">
+              <span class="estetica-num">05</span>
+              <div class="estetica-text">
+                <strong>Pronto para auditoria interna</strong>
+                <span>Trilhas de registro organizadas para conferência e fiscalização.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="screens-section" id="produto">
+        <div class="screens-inner">
+          <div class="section-label">O produto</div>
+          <h2 class="section-title">Interface que reflete organização real</h2>
+          <p class="section-sub">
+            Não é uma lista de recursos. É uma plataforma com interface operacional
+            desenhada para leitura rápida e ação imediata.
+          </p>
+
+          <div class="screens-grid">
+            <article class="screen-card">
+              <div class="screen-card-header">
+                <span class="screen-card-dot"></span><span class="screen-card-dot"></span><span class="screen-card-dot"></span>
+                <span class="screen-card-title">Agenda — Maio 2026</span>
+              </div>
+              <div class="screen-card-body">
+                <div class="agenda-grid">
+                  <div class="ag-day">S</div><div class="ag-day">T</div><div class="ag-day">Q</div><div class="ag-day">Q</div><div class="ag-day">S</div><div class="ag-day">S</div><div class="ag-day">D</div>
+                  <div class="ag-cell"></div><div class="ag-cell has-event">1</div><div class="ag-cell has-event">2</div><div class="ag-cell">3</div><div class="ag-cell">4</div><div class="ag-cell has-event">5</div><div class="ag-cell today">6</div>
+                  <div class="ag-cell has-event">7</div><div class="ag-cell light-event">8</div><div class="ag-cell has-event">9</div><div class="ag-cell">10</div><div class="ag-cell has-event">11</div><div class="ag-cell">12</div><div class="ag-cell">13</div>
+                  <div class="ag-cell has-event">14</div><div class="ag-cell has-event">15</div><div class="ag-cell light-event">16</div><div class="ag-cell has-event">17</div><div class="ag-cell">18</div><div class="ag-cell">19</div><div class="ag-cell">20</div>
+                  <div class="ag-cell has-event">21</div><div class="ag-cell has-event">22</div><div class="ag-cell">23</div><div class="ag-cell light-event">24</div><div class="ag-cell has-event">25</div><div class="ag-cell">26</div><div class="ag-cell">27</div>
+                  <div class="ag-cell light-event">28</div><div class="ag-cell has-event">29</div><div class="ag-cell has-event">30</div><div class="ag-cell has-event">31</div><div class="ag-cell"></div><div class="ag-cell"></div><div class="ag-cell"></div>
+                </div>
+                <div class="mini-screen-list">
+                  <span>09:00 — Radiofrequência · Carla M.</span>
+                  <span>10:30 — Limpeza de pele · Ana S.</span>
+                  <span>14:00 — Preenchimento · Paula R.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="screen-card">
+              <div class="screen-card-header">
+                <span class="screen-card-dot"></span><span class="screen-card-dot"></span><span class="screen-card-dot"></span>
+                <span class="screen-card-title">Prontuário — Ana Souza</span>
+              </div>
+              <div class="screen-card-body">
+                <div class="client-mini-head">
+                  <span>A</span>
                   <div>
-                    <span class="micro-label">Visão da clínica</span>
-                    <h2>Boa tarde, Clínica Harmonia</h2>
+                    <strong>Ana Souza</strong>
+                    <small>Cliente desde jan/2024 · 18 atendimentos</small>
                   </div>
-                  <span class="status-badge status-ok">Operação ativa</span>
                 </div>
-
-                <div class="kpi-grid">
-                  <article>
-                    <span>Hoje</span>
-                    <strong>14</strong>
-                    <small>Atendimentos agendados</small>
-                  </article>
-                  <article>
-                    <span>Receita prevista</span>
-                    <strong>R$ 8.240</strong>
-                    <small>Agenda vinculada ao caixa</small>
-                  </article>
-                  <article>
-                    <span>Alertas</span>
-                    <strong class="danger-text">3</strong>
-                    <small>Documentos e inventário</small>
-                  </article>
+                <div class="pron-rows">
+                  <div class="pron-row"><span>Anamnese inicial</span><span>jan/2024</span></div>
+                  <div class="pron-row"><span>Radiofrequência facial</span><span>mar/2026</span></div>
+                  <div class="pron-row"><span>Peeling químico</span><span>abr/2026</span></div>
+                  <div class="pron-row"><span>Atualização anamnese</span><span>mai/2026</span></div>
                 </div>
-
-                <div class="workspace-grid">
-                  <section class="panel panel-large">
-                    <div class="panel-head">
-                      <strong>Próximos atendimentos</strong>
-                      <span class="badge-like">Hoje</span>
-                    </div>
-                    <div class="table-row table-head">
-                      <span>Cliente</span><span>Serviço</span><span>Status</span><span>Pagamento</span>
-                    </div>
-                    <div class="table-row">
-                      <span>M. Ribeiro</span><span>Bioestimulador</span><span class="pill ok">Confirmado</span><span>Pago</span>
-                    </div>
-                    <div class="table-row">
-                      <span>A. Costa</span><span>Limpeza de pele</span><span class="pill neutral">Check-in</span><span>Pendente</span>
-                    </div>
-                    <div class="table-row">
-                      <span>L. Martins</span><span>Corporal</span><span class="pill champagne">Em sala</span><span>Pago</span>
-                    </div>
-                  </section>
-
-                  <section class="panel">
-                    <div class="panel-head">
-                      <strong>Documentos e compliance</strong>
-                      <span class="badge-like gold">Alertas</span>
-                    </div>
-                    <div class="mini-alert danger"><span></span> Alvará vencido</div>
-                    <div class="mini-alert warn"><span></span> Licença vence em 18 dias</div>
-                    <div class="mini-alert ok"><span></span> Termos assinados</div>
-                  </section>
-
-                  <section class="panel">
-                    <div class="panel-head">
-                      <strong>Estoque e aparelhos</strong>
-                      <span class="badge-like muted">Controle</span>
-                    </div>
-                    <div class="progress-line"><span style="width: 72%"></span></div>
-                    <p class="panel-note">2 lotes próximos do vencimento e 1 manutenção pendente.</p>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section pain-section" id="dores" aria-labelledby="dores-title">
-        <div class="section-inner">
-          <p class="eyebrow">Dores reais da operação</p>
-          <h2 class="section-title" id="dores-title">Quando a clínica cresce, a bagunça documental também cresce.</h2>
-          <p class="section-lead">
-            O L'Appui foi desenhado para substituir arquivos soltos, planilhas paralelas e
-            controles manuais por uma rotina centralizada e auditável.
-          </p>
-
-          <div class="pain-grid">
-            <article><strong>Prontuários espalhados</strong><p>Histórico clínico dividido entre papel, mensagens, PDFs e planilhas.</p></article>
-            <article><strong>Consentimentos sem rastreabilidade</strong><p>Termos assinados sem versão, data, responsável ou vínculo claro ao atendimento.</p></article>
-            <article><strong>Documentos vencendo sem controle</strong><p>Licenças, registros e obrigações sanitárias sem fila de acompanhamento.</p></article>
-            <article><strong>Estoque e equipamentos sem alerta</strong><p>Lotes, validades, garantias e manutenções fora da visão diária da gestão.</p></article>
-            <article><strong>Agenda desconectada do financeiro</strong><p>Atendimento confirmado em um lugar e cobrança acompanhada em outro.</p></article>
-            <article><strong>Difícil provar conformidade</strong><p>Sem trilha objetiva de ações, documentos, responsáveis e alterações sensíveis.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section product-section" id="produto" aria-labelledby="produto-title">
-        <div class="section-inner">
-          <div class="section-heading-row">
-            <div>
-              <p class="eyebrow">Visão do produto</p>
-              <h2 class="section-title" id="produto-title">O painel central da clínica estética.</h2>
-            </div>
-            <p class="section-lead">
-              A experiência da landing segue a linguagem do SaaS: blocos claros,
-              informação densa na medida certa, status visuais e hierarquia operacional.
-            </p>
-          </div>
-
-          <div class="product-grid">
-            <article class="screen-card span-2">
-              <div class="screen-head"><strong>Dashboard clínico</strong><span>Resumo</span></div>
-              <div class="screen-metrics">
-                <div><span>Atendimentos</span><strong>14</strong></div>
-                <div><span>Documentos</span><strong>32</strong></div>
-                <div><span>Alertas</span><strong>3</strong></div>
-              </div>
-              <div class="timeline">
-                <span></span><span></span><span></span><span></span>
+                <div class="screen-warning">Consentimento de preenchimento pendente</div>
               </div>
             </article>
+
             <article class="screen-card">
-              <div class="screen-head"><strong>Clientes e prontuários</strong><span>Cadastro</span></div>
-              <ul class="screen-list">
-                <li>Anamnese registrada</li>
-                <li>Consentimentos vinculados</li>
-                <li>PDF de prontuário</li>
-              </ul>
-            </article>
-            <article class="screen-card">
-              <div class="screen-head"><strong>Agenda</strong><span>Hoje</span></div>
-              <div class="slot">09:00 · Dra. Paula · Cliente A</div>
-              <div class="slot muted">11:30 · Esteticista · Cliente B</div>
-              <div class="slot">15:00 · Biomédica · Cliente C</div>
-            </article>
-            <article class="screen-card">
-              <div class="screen-head"><strong>Documentos</strong><span>Compliance</span></div>
-              <div class="status-line"><span>Válidos</span><strong>28</strong></div>
-              <div class="status-line"><span>&lt; 30 dias</span><strong>4</strong></div>
-              <div class="status-line danger-text"><span>Vencidos</span><strong>1</strong></div>
-            </article>
-            <article class="screen-card">
-              <div class="screen-head"><strong>Produtos e equipamentos</strong><span>Inventário</span></div>
-              <span class="tag warn">Lote vence em 45 dias</span>
-              <span class="tag danger">Manutenção atrasada</span>
-            </article>
-            <article class="screen-card span-2">
-              <div class="screen-head"><strong>Auditoria</strong><span>Trilha</span></div>
-              <div class="audit-log"><span>14:02</span> Visualização de prontuário #8821</div>
-              <div class="audit-log"><span>14:18</span> Alteração de valor do atendimento</div>
-              <div class="audit-log"><span>14:40</span> Assinatura de termo de consentimento</div>
+              <div class="screen-card-header">
+                <span class="screen-card-dot"></span><span class="screen-card-dot"></span><span class="screen-card-dot"></span>
+                <span class="screen-card-title">Pagamentos — mai/2026</span>
+              </div>
+              <div class="screen-card-body">
+                <div class="pay-summary">
+                  <div><span>Recebido</span><strong>R$ 8.420</strong></div>
+                  <div><span>A receber</span><strong>R$ 2.180</strong></div>
+                </div>
+                <div class="pay-rows">
+                  <div class="pay-row"><span>Plano mensal — Clínica</span><span class="pay-status paid">Pago</span></div>
+                  <div class="pay-row"><span>Assinatura Pro — maio</span><span class="pay-status late">Atraso</span></div>
+                  <div class="pay-row"><span>Sessão avulsa — Paula</span><span class="pay-status pend">Pendente</span></div>
+                  <div class="pay-row"><span>Pacote 10 sessões</span><span class="pay-status paid">Pago</span></div>
+                  <div class="pay-row"><span>Manutenção equipamento</span><span class="pay-status pend">Pendente</span></div>
+                </div>
+              </div>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section class="section" id="modulos" aria-labelledby="modulos-title">
-        <div class="section-inner">
-          <p class="eyebrow">Módulos principais</p>
-          <h2 class="section-title" id="modulos-title">Uma plataforma para a rotina inteira da clínica.</h2>
-          <p class="section-lead">
-            Cada módulo reduz uma fonte de desorganização: prontuário, agenda, documentos,
-            estoque, financeiro e auditoria passam a conversar no mesmo fluxo.
-          </p>
-
-          <div class="modules-grid">
-            <article>
-              <span class="module-icon">01</span>
-              <h3>Prontuário e clientes</h3>
-              <p>Centraliza dados do cliente, histórico, anamnese, consentimentos e PDFs.</p>
-            </article>
-            <article>
-              <span class="module-icon">02</span>
-              <h3>Agenda e atendimentos</h3>
-              <p>Organiza horários, profissionais, serviços, status e pagamentos vinculados.</p>
-            </article>
-            <article>
-              <span class="module-icon">03</span>
-              <h3>Documentos e compliance</h3>
-              <p>Controla documentos legais, sanitários, clientes e resíduos, com alertas de vencimento.</p>
-            </article>
-            <article>
-              <span class="module-icon">04</span>
-              <h3>Produtos e equipamentos</h3>
-              <p>Monitora estoque, lote, validade, equipamentos, manutenção e garantia.</p>
-            </article>
-            <article>
-              <span class="module-icon">05</span>
-              <h3>Financeiro e assinatura</h3>
-              <p>Acompanha pagamentos, contas da clínica, status de cobrança e vencimentos.</p>
-            </article>
-            <article>
-              <span class="module-icon">06</span>
-              <h3>Auditoria e suporte</h3>
-              <p>Registra ações sensíveis e permite suporte técnico com rastreabilidade.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section clinic-section" id="clinicas" aria-labelledby="clinicas-title">
-        <div class="section-inner clinic-layout">
-          <div>
-            <p class="eyebrow">Pensado para clínicas de estética</p>
-            <h2 class="section-title" id="clinicas-title">Desenhado para a rotina real de atendimento, gestão e fiscalização.</h2>
-            <p class="section-lead">
-              O L'Appui respeita a dinâmica de recepção, profissionais, gestores e suporte.
-              A plataforma organiza a operação sem prometer decisão clínica automática.
-            </p>
-          </div>
-          <div class="pillars-grid">
-            <article><strong>Atendimento clínico organizado</strong><span>Anamnese, procedimento e pós-atendimento com registro único.</span></article>
-            <article><strong>Segurança documental</strong><span>Consentimentos, documentos e intercorrências com contexto.</span></article>
-            <article><strong>Gestão da operação</strong><span>Agenda, serviços, estoque, equipamentos e indicadores no mesmo painel.</span></article>
-            <article><strong>Controle de equipe</strong><span>Profissionais, disponibilidade, responsabilidades e ações sensíveis.</span></article>
-            <article><strong>Rastreabilidade</strong><span>Quem fez o quê, quando, em qual módulo e com qual vínculo.</span></article>
-            <article><strong>Preparação para auditoria</strong><span>Base documental organizada para conferências internas e externas.</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alerts-section" id="alertas" aria-labelledby="alertas-title">
-        <div class="section-inner">
-          <p class="eyebrow">Demonstração de alertas</p>
-          <h2 class="section-title" id="alertas-title">Status discretos, leitura rápida e ação clara.</h2>
-          <p class="section-lead">
-            O sistema destaca pontos de atenção sem transformar a operação em um painel
-            barulhento. A equipe vê prioridade, contexto e próximo passo.
-          </p>
-
-          <div class="status-grid">
-            <article class="status-card danger"><span>Documento</span><strong>Vencido</strong><p>Alvará sanitário venceu há 12 dias.</p></article>
-            <article class="status-card warn"><span>Produto</span><strong>Próximo do vencimento</strong><p>Sérum ativo · lote encerra em 24 dias.</p></article>
-            <article class="status-card warn"><span>Equipamento</span><strong>Manutenção pendente</strong><p>Laser com preventiva atrasada e OS anexada.</p></article>
-            <article class="status-card ok"><span>Consentimento</span><strong>Assinado</strong><p>Cliente, profissional, data e IP registrados.</p></article>
-            <article class="status-card ok"><span>Financeiro</span><strong>Pagamento em dia</strong><p>Atendimento vinculado e conciliado.</p></article>
-            <article class="status-card neutral"><span>Prontuário</span><strong>Anamnese registrada</strong><p>Formulário completo antes do procedimento.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section responsibility-section" id="responsabilidade" aria-labelledby="responsabilidade-title">
-        <div class="section-inner responsibility-card">
-          <div>
-            <p class="eyebrow">Confiança e responsabilidade</p>
-            <h2 class="section-title" id="responsabilidade-title">Apoio operacional, decisão com a equipe da clínica.</h2>
-          </div>
-          <div class="responsibility-copy">
-            <p>
-              O L'Appui ajuda a organizar informações e destacar pontos de atenção,
-              mantendo a decisão profissional com a equipe da clínica.
-            </p>
-            <p>
-              Alertas e insights são apoio operacional e auditável. Eles não substituem
-              avaliação clínica, não prometem diagnóstico automático e não removem a
-              responsabilidade técnica do profissional.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contato" aria-labelledby="contato-title">
-        <div class="section-inner contact-layout">
-          <div class="contact-copy">
-            <p class="eyebrow">Demonstração comercial</p>
-            <h2 class="section-title" id="contato-title">Veja sua clínica organizada em poucos minutos.</h2>
-            <p class="section-lead">
-              Envie os dados da clínica para receber uma demonstração guiada com foco em
-              prontuários, agenda, documentos, estoque, financeiro e rastreabilidade.
-            </p>
-            <a class="btn btn-champagne" href="mailto:comercial@lappui.com.br">Falar com suporte</a>
-          </div>
-
-          <form class="lead-form" id="lead-form" novalidate>
-            <div class="form-grid">
-              <label>
-                <span>Nome da clínica</span>
-                <input type="text" name="clinica" required autocomplete="organization" />
-              </label>
-              <label>
-                <span>Cidade / UF</span>
-                <input type="text" name="cidade" required autocomplete="address-level2" />
-              </label>
-              <label>
-                <span>Tamanho da equipe</span>
-                <select name="equipe" required>
-                  <option value="">Selecione</option>
-                  <option>1 a 3 profissionais</option>
-                  <option>4 a 10 profissionais</option>
-                  <option>Mais de 10 profissionais</option>
-                </select>
-              </label>
-              <label>
-                <span>Seu nome</span>
-                <input type="text" name="nome" required autocomplete="name" />
-              </label>
-              <label>
-                <span>E-mail</span>
-                <input type="email" name="email" required autocomplete="email" />
-              </label>
-              <label>
-                <span>Telefone / WhatsApp</span>
-                <input type="tel" name="telefone" required autocomplete="tel" />
-              </label>
-              <label class="full">
-                <span>Objetivo principal</span>
-                <select name="objetivo" required>
-                  <option value="">Selecione</option>
-                  <option>Organizar prontuários e consentimentos</option>
-                  <option>Unificar agenda e financeiro</option>
-                  <option>Compliance e documentos da clínica</option>
-                  <option>Estoque e equipamentos</option>
-                  <option>Substituir ferramentas dispersas</option>
-                  <option>Outro</option>
-                </select>
-              </label>
-              <label class="full">
-                <span>Mensagem (opcional)</span>
-                <textarea name="mensagem" rows="3"></textarea>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn-primary form-submit">Solicitar demonstração</button>
-            <p class="form-note">
-              Ao enviar, você concorda em ser contatado para fins comerciais relacionados ao L'Appui.
-            </p>
-            <p id="form-success" class="form-success" hidden>
-              Solicitação encaminhada ao cliente de e-mail. Se nada abrir, fale com comercial@lappui.com.br.
-            </p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <a href="#" class="logo">
-          <span class="logo-mark" aria-hidden="true"><img src="lappui-mark.svg" alt="" /></span>
-          <span>L'Appui</span>
-        </a>
-        <div class="footer-links">
-          <a href="#modulos">Funcionalidades</a>
-          <a href="#contato">Contato</a>
-          <span>© <span id="year"></span> L'Appui</span>
         </div>
       </div>
+
+      <section class="trust-strip">
+        <div>
+          <div class="section-label">Responsabilidade</div>
+          <h2 class="section-title">Apoio operacional, decisão com a equipe</h2>
+        </div>
+        <p>
+          O L'Appui organiza informações e destaca pontos de atenção com regras
+          auditáveis. Ele não substitui avaliação clínica nem promete diagnóstico
+          automático.
+        </p>
+      </section>
+
+      <div class="cta-final" id="demo">
+        <div class="cta-final-inner">
+          <h2>Organize sua clínica com controle, clareza e segurança operacional</h2>
+          <p>
+            Uma demonstração guiada mostra como o L'Appui se adapta à rotina da sua
+            clínica e quais módulos fazem mais sentido para sua operação.
+          </p>
+          <div class="cta-actions">
+            <a href="mailto:comercial@lappui.com.br" class="btn-gold">Solicitar demonstração</a>
+            <a href="mailto:comercial@lappui.com.br" class="btn-light">Falar com suporte</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span class="footer-logo">L'Appui</span>
+      <span class="footer-copy">© <span id="year"></span> L'Appui · Gestão operacional para clínicas de estética</span>
     </footer>
 
     <script src="js/main.js"></script>
