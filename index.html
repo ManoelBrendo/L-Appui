@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <div class="bg-blob blob-1"></div>
+      <div class="bg-blob blob-2"></div>
+      <div class="bg-blob blob-3"></div>
+    </div>
+
     <a class="sr-only" href="#conteudo-principal">Ir para o conteúdo</a>
 
     <nav class="site-nav" aria-label="Principal">
@@ -40,10 +46,23 @@
         <li><a href="#demo" class="nav-cta">Solicitar demonstração</a></li>
       </ul>
 
-      <button type="button" class="menu-toggle" id="menu-btn" aria-expanded="false" aria-controls="nav-mobile">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Abrir menu</span>
-      </button>
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button type="button" class="menu-toggle" id="menu-btn" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Abrir menu</span>
+        </button>
+      </div>
+
+      <div class="nav-scroll-bar"></div>
     </nav>
 
     <div class="nav-mobile" id="nav-mobile">
@@ -55,6 +74,7 @@
 
     <main id="conteudo-principal">
       <div class="hero-wrap">
+        <div class="hero-grid-mesh" aria-hidden="true"></div>
         <section class="hero">
           <div class="hero-content">
             <div class="hero-badge">
@@ -83,6 +103,15 @@
           </div>
 
           <div class="hero-visual" aria-label="Mockup do painel de auditoria do L'Appui">
+            <div class="floating-badge badge-active" aria-hidden="true">
+              <span class="f-badge-icon">✓</span>
+              <span class="f-badge-text">Auditoria Ativa</span>
+            </div>
+            <div class="floating-badge badge-warning" aria-hidden="true">
+              <span class="f-badge-icon">!</span>
+              <span class="f-badge-text">Lote Crítico</span>
+            </div>
+
             <div class="dashboard-frame">
               <div class="frame-bar">
                 <div class="frame-dot red"></div>
@@ -97,7 +126,7 @@
                     <img src="lappui-mark.svg" alt="" />
                     <span>L'Appui</span>
                   </div>
-                  <div class="dash-nav-item active">
+                  <div class="dash-nav-item active" data-dash-nav="auditoria">
                     <svg viewBox="0 0 14 14" fill="none">
                       <rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
                       <rect x="8" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
@@ -106,42 +135,42 @@
                     </svg>
                     Auditoria
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="prontuario">
                     <svg viewBox="0 0 14 14" fill="none">
                       <rect x="1.5" y="2" width="11" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2" />
                       <path d="M4 5h6M4 7.5h4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
                     </svg>
                     Prontuário
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="agenda">
                     <svg viewBox="0 0 14 14" fill="none">
                       <rect x="1.5" y="1.5" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" />
                       <path d="M4 4h6M4 7h6M4 10h3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
                     </svg>
                     Agenda
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="documentos">
                     <svg viewBox="0 0 14 14" fill="none">
                       <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2" />
                       <path d="M7 4v3.5l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
                     </svg>
                     Documentos
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="estoque">
                     <svg viewBox="0 0 14 14" fill="none">
                       <path d="M2 12V5l5-3 5 3v7" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
                       <rect x="5" y="8" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.1" />
                     </svg>
                     Estoque
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="profissionais">
                     <svg viewBox="0 0 14 14" fill="none">
                       <circle cx="7" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2" />
                       <path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
                     </svg>
                     Profissionais
                   </div>
-                  <div class="dash-nav-item">
+                  <div class="dash-nav-item" data-dash-nav="pagamentos">
                     <svg viewBox="0 0 14 14" fill="none">
                       <rect x="1.5" y="3" width="9" height="7" rx="1" stroke="currentColor" stroke-width="1.2" />
                       <path d="M11 5l1.5-.5v5L11 9" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
@@ -200,6 +229,11 @@
             </div>
           </div>
         </section>
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="mouse-icon">
+            <span class="mouse-wheel"></span>
+          </div>
+        </div>
       </div>
 
       <div class="divider"><hr /></div>
@@ -215,32 +249,70 @@
 
           <div class="pains-grid">
             <article class="pain-card">
-              <div class="pain-icon">!</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Documentos vencidos sem alerta</h3>
               <p class="pain-desc">Alvarás, certificados e habilitações expiram sem fila clara de ação.</p>
             </article>
             <article class="pain-card">
-              <div class="pain-icon">+</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                  <line x1="10" y1="14" x2="8" y2="18"/>
+                  <line x1="14" y1="14" x2="16" y2="18"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Agenda descentralizada</h3>
               <p class="pain-desc">Conflitos de horário, ausências e pagamentos ficam fora do mesmo contexto.</p>
             </article>
             <article class="pain-card">
-              <div class="pain-icon">#</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                  <circle cx="12" cy="13" r="3"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Prontuários espalhados</h3>
               <p class="pain-desc">Anamneses, fotos e consentimentos sem registro formal ou rastreabilidade.</p>
             </article>
             <article class="pain-card">
-              <div class="pain-icon">%</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Produtos vencendo sem controle</h3>
               <p class="pain-desc">Insumos e cosméticos perdem validade sem notificação preventiva.</p>
             </article>
             <article class="pain-card">
-              <div class="pain-icon">$</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2"/>
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Pagamentos sem clareza</h3>
               <p class="pain-desc">Cobranças, inadimplência e assinatura sem visão consolidada.</p>
             </article>
             <article class="pain-card">
-              <div class="pain-icon">*</div>
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <line x1="12" y1="5" x2="12" y2="1"/>
+                </svg>
+              </div>
               <h3 class="pain-title">Sem visão do que é crítico</h3>
               <p class="pain-desc">A equipe perde tempo procurando o que deveria aparecer no painel.</p>
             </article>
@@ -250,7 +322,7 @@
 
       <section id="modulos">
         <div class="section-label">Sistema modular</div>
-        <h2 class="section-title">Todos os módulos da clínica em uma plataforma</h2>
+        <h2 class="section-title">Todos os módulos da clínica em uma plataforma <em>integrada</em></h2>
         <p class="section-sub">
           Cada módulo opera de forma independente e se conecta aos demais para alimentar a
           Auditoria com informações cruzadas.
@@ -258,47 +330,100 @@
 
         <div class="modules-grid">
           <article class="module-card">
-            <div class="module-icon-wrap">01</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 11 11 13 15 9"/>
+              </svg>
+            </div>
             <h3 class="module-name">Auditoria</h3>
             <p class="module-desc">Cruza informações para exibir riscos, vencimentos e prioridades operacionais.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">02</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                <line x1="9" y1="10" x2="15" y2="10"/>
+                <line x1="9" y1="14" x2="15" y2="14"/>
+              </svg>
+            </div>
             <h3 class="module-name">Prontuário</h3>
             <p class="module-desc">Atendimentos, anamneses, evolução clínica, consentimentos e PDFs.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">03</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <polyline points="9 16 11 18 15 14"/>
+              </svg>
+            </div>
             <h3 class="module-name">Agenda</h3>
             <p class="module-desc">Horários, profissionais, serviços, status e pagamentos vinculados.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">04</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
             <h3 class="module-name">Documentos</h3>
             <p class="module-desc">Alvarás, certificados, termos e obrigações com controle de validade.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">05</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
             <h3 class="module-name">Produtos e Equipamentos</h3>
             <p class="module-desc">Estoque, validade de insumos, manutenção e garantia de equipamentos.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">06</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
             <h3 class="module-name">Profissionais</h3>
             <p class="module-desc">Cadastro, disponibilidade, responsabilidades e documentação da equipe.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">07</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
             <h3 class="module-name">Serviços e POP</h3>
             <p class="module-desc">Catálogo de procedimentos com operação padrão vinculada a cada serviço.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">08</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
             <h3 class="module-name">Pagamentos</h3>
             <p class="module-desc">Cobranças, assinatura, vencimentos e visão financeira operacional.</p>
           </article>
           <article class="module-card">
-            <div class="module-icon-wrap">09</div>
+            <div class="module-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
             <h3 class="module-name">Suporte</h3>
             <p class="module-desc">Atendimento técnico com contexto e rastreabilidade para manutenção assistida.</p>
           </article>
@@ -426,6 +551,222 @@
           </div>
         </div>
       </section>
+      
+      <div class="divider"><hr /></div>
+
+      <section class="shelf-section scroll-reveal" id="simulador-estoque">
+        <div class="shelf-inner">
+          <div class="section-label">Controle de Estoque</div>
+          <h2 class="section-title">Auditoria visual de lotes e validades <em>sob controle</em></h2>
+          <p class="section-sub">
+            Clique nos produtos da nossa prateleira interativa e veja como o L'Appui classifica os riscos sanitários e indica as ações recomendadas imediatamente.
+          </p>
+
+          <div class="shelf-grid">
+            <!-- Coluna Esquerda: Prateleira Física de Produtos -->
+            <div class="shelf-display-col">
+              <div class="glass-shelf-container">
+                <div class="glass-shelf">
+                  <div class="shelf-item-wrap active" data-shelf-item="botox">
+                    <div class="cosmetic-bottle botox-bottle">
+                      <div class="bottle-cap"></div>
+                      <div class="bottle-body">
+                        <span class="bottle-label">BOTOX</span>
+                      </div>
+                    </div>
+                    <span class="shelf-item-label">Toxina Botulínica</span>
+                  </div>
+
+                  <div class="shelf-item-wrap" data-shelf-item="acid">
+                    <div class="cosmetic-bottle acid-bottle">
+                      <div class="bottle-cap"></div>
+                      <div class="bottle-body">
+                        <span class="bottle-label">ÁCIDO</span>
+                      </div>
+                    </div>
+                    <span class="shelf-item-label">Ácido Hialurônico</span>
+                  </div>
+
+                  <div class="shelf-item-wrap" data-shelf-item="serum">
+                    <div class="cosmetic-bottle serum-bottle">
+                      <div class="bottle-cap"></div>
+                      <div class="bottle-body">
+                        <span class="bottle-label">SÉRUM</span>
+                      </div>
+                    </div>
+                    <span class="shelf-item-label">Sérum Facial</span>
+                  </div>
+                </div>
+                <div class="shelf-wood"></div>
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Card de Auditoria do Lote -->
+            <div class="shelf-details-col">
+              <div class="shelf-details-card" id="shelf-details-panel">
+                <div class="details-header">
+                  <h4 class="details-subtitle">Detecção e Auditoria de Lote</h4>
+                  <h3 class="details-title" id="shelf-item-name">Toxina Botulínica (Botox)</h3>
+                </div>
+
+                <div class="details-body">
+                  <div class="details-meta-grid">
+                    <div class="meta-item">
+                      <span class="meta-label">Código do Lote</span>
+                      <strong class="meta-val" id="shelf-item-code">#BTX-2026</strong>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">Data de Validade</span>
+                      <strong class="meta-val" id="shelf-item-date">12/06/2026</strong>
+                    </div>
+                  </div>
+
+                  <div class="details-status-row">
+                    <span class="meta-label">Status Sanitário</span>
+                    <span class="status-badge warning" id="shelf-item-status">Atenção (Vence em 7 dias)</span>
+                  </div>
+
+                  <div class="details-action-box">
+                    <span class="action-label">Ação Operacional Recomendada</span>
+                    <p class="action-desc" id="shelf-item-action">Priorizar a aplicação deste lote nas sessões agendadas para esta semana ou transferir o item para uso imediato em cabine.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><hr /></div>
+
+      <section class="calculator-section" id="diagnostico">
+        <div class="calculator-inner">
+          <div class="section-label">Auto-diagnóstico</div>
+          <h2 class="section-title">Qual é o nível de risco da sua clínica <em>hoje</em>?</h2>
+          <p class="section-sub">
+            Selecione as situações operacionais que acontecem no seu dia a dia e veja a avaliação imediata de risco e as sugestões de controle.
+          </p>
+
+          <div class="calc-grid" id="risk-calculator">
+            <div class="calc-checklist">
+              <label class="calc-cb-label">
+                <input type="checkbox" data-risk-check="alvara" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">
+                  <strong>Alvarás e Certidões de Profissionais</strong>
+                  <small>Controlados em planilhas ou pastas físicas, sem alertas automáticos de vencimento.</small>
+                </span>
+              </label>
+              <label class="calc-cb-label">
+                <input type="checkbox" data-risk-check="estoque" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">
+                  <strong>Estoque e Validade de Produtos</strong>
+                  <small>Validades anotadas manualmente; produtos vencidos ou quase vencidos já foram identificados na gaveta.</small>
+                </span>
+              </label>
+              <label class="calc-cb-label">
+                <input type="checkbox" data-risk-check="anamnese" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">
+                  <strong>Prontuários e Anamneses</strong>
+                  <small>Histórico clínico preenchido em papel ou termos de consentimento não integrados ao prontuário.</small>
+                </span>
+              </label>
+              <label class="calc-cb-label">
+                <input type="checkbox" data-risk-check="pagamentos" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">
+                  <strong>Conciliação de Pagamentos</strong>
+                  <small>Sem cruzamento automático entre atendimentos na agenda e o recebimento das parcelas/cartões.</small>
+                </span>
+              </label>
+              <label class="calc-cb-label">
+                <input type="checkbox" data-risk-check="equipamentos" />
+                <span class="cb-custom"></span>
+                <span class="cb-text">
+                  <strong>Calibração e Manutenção de Equipamentos</strong>
+                  <small>Laser, criolipólise ou radiofrequência sem histórico formalizado de preventivas e revisões do fabricante.</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="calc-result">
+              <div class="result-card">
+                <span class="result-label">Diagnóstico Operacional</span>
+                <div class="result-score">
+                  <span id="risk-score-value">0%</span>
+                </div>
+                <div class="risk-bar-bg">
+                  <div id="risk-bar" class="risk-bar-fill"></div>
+                </div>
+                <div class="risk-level">
+                  Nível de Risco: <strong id="risk-level-label">Excelente</strong>
+                </div>
+                <p id="risk-feedback" class="risk-feedback-text">
+                  Selecione as opções ao lado para auditar a saúde operacional da sua clínica.
+                </p>
+              </div>
+          </div>
+
+          <!-- Calculadora de ROI / Economia -->
+          <div class="roi-divider"><hr /></div>
+
+          <div class="roi-header">
+            <div class="section-label">Retorno Financeiro</div>
+            <h3 class="roi-title">Simule a economia da sua clínica com o L'Appui</h3>
+            <p class="roi-subtext">Defina o faturamento mensal e as horas gastas em auditoria manual para ver a estimativa de retorno financeiro.</p>
+          </div>
+
+          <div class="calc-grid" id="roi-calculator">
+            <div class="roi-sliders">
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Faturamento Mensal (R$)</span>
+                  <strong id="roi-billing-val">R$ 50.000</strong>
+                </div>
+                <input type="range" id="roi-billing" min="10000" max="250000" step="5000" value="50000" class="roi-range-input" />
+                <div class="slider-bounds">
+                  <span>R$ 10k</span>
+                  <span>R$ 250k+</span>
+                </div>
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <span>Horas de auditoria manual por semana</span>
+                  <strong id="roi-hours-val">10 horas</strong>
+                </div>
+                <input type="range" id="roi-hours" min="2" max="40" step="1" value="10" class="roi-range-input" />
+                <div class="slider-bounds">
+                  <span>2h</span>
+                  <span>40h</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-result">
+              <div class="result-card roi-result-card">
+                <span class="result-label">Economia Mensal Estimada</span>
+                <div class="result-score roi-score">
+                  <span id="roi-savings">R$ 3.750</span>
+                </div>
+                <ul class="roi-breakdown">
+                  <li>
+                    <svg class="roi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Redução de desperdício em estoque: <strong>1.5%</strong> do faturamento</span>
+                  </li>
+                  <li>
+                    <svg class="roi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Automatização de auditoria: <strong>R$ 75/h</strong> economizados</span>
+                  </li>
+                </ul>
+                <a href="#demo" class="btn-primary roi-cta">Garantir esta economia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div class="screens-section" id="produto">
         <div class="screens-inner">
@@ -505,6 +846,148 @@
         </div>
       </div>
 
+      <div class="divider"><hr /></div>
+
+      <section class="testimonials-section scroll-reveal" id="depoimentos">
+        <div class="testimonials-inner">
+          <div class="section-label">Prova Social</div>
+          <h2 class="section-title">Quem gerencia com o L'Appui, confia</h2>
+          <p class="section-sub">
+            Veja o depoimento de donos e profissionais de clínicas de estética que transformaram suas operações diárias.
+          </p>
+
+          <div class="testimonials-grid">
+            <!-- Coluna Esquerda: Resumo de Satisfação e Trust Badges -->
+            <div class="testimonials-trust-col">
+              <div class="rating-card">
+                <div class="rating-score-wrap">
+                  <span class="rating-score">4.9</span>
+                  <span class="rating-max">/ 5.0</span>
+                </div>
+                <div class="rating-stars">★★★★★</div>
+                <p class="rating-meta">Avaliação média por +150 gestores de clínicas</p>
+              </div>
+
+              <div class="trust-metrics-card">
+                <ul class="trust-metrics-list">
+                  <li>
+                    <svg class="trust-metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>+12.000</strong> prontuários geridos com segurança</span>
+                  </li>
+                  <li>
+                    <svg class="trust-metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>Zero multas</strong> fiscais por atraso de alvarás</span>
+                  </li>
+                  <li>
+                    <svg class="trust-metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>99.4%</strong> de satisfação no suporte técnico</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="compliance-badges">
+                <div class="badge-item" title="Conformidade total com a Vigilância Sanitária">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                  <span>ANVISA Compliant</span>
+                </div>
+                <div class="badge-item" title="Segurança total de dados de saúde">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span>Conformidade LGPD</span>
+                </div>
+                <div class="badge-item" title="Servidores altamente seguros">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                  <span>Cloud Médica ISO</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Carrossel Interativo com Barra de Progresso -->
+            <div class="testimonials-carousel-col">
+              <div class="testimonials-carousel">
+                <div class="quote-bg-icon">“</div>
+                <div class="carousel-container">
+                  <article class="testimonial-slide active" data-testimonial-slide>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                      "O L'Appui mudou completamente a nossa dinâmica operacional. Antes, perdíamos lotes de sérum que passavam da validade na gaveta, e agora a Auditoria nos avisa com 30 dias de antecedência. Os prontuários integrados trazem uma segurança jurídica incrível."
+                    </p>
+                    <div class="testimonial-author">
+                      <div class="author-avatar">
+                        <img src="images/danielle_avatar.png" alt="Dra. Danielle Vasconcelos" class="avatar-img" />
+                      </div>
+                      <div class="author-info">
+                        <strong>Dra. Danielle Vasconcelos</strong>
+                        <span>Proprietária · Clínica Harmonya Estética</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="testimonial-slide" data-testimonial-slide>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                      "Centralizar a agenda, os termos de consentimento e a manutenção do laser em um único painel foi a melhor decisão do ano. Nossos profissionais não perdem mais tempo procurando papéis físicos. O suporte técnico também é espetacular."
+                    </p>
+                    <div class="testimonial-author">
+                      <div class="author-avatar">
+                        <img src="images/rodrigo_avatar.png" alt="Dr. Rodrigo Mendes" class="avatar-img" />
+                      </div>
+                      <div class="author-info">
+                        <strong>Dr. Rodrigo Mendes</strong>
+                        <span>Diretor Clínico · Instituto Pelle</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="testimonial-slide" data-testimonial-slide>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                      "A conciliação de pagamentos cruzada com a agenda reduziu nossa inadimplência em quase 15%. É impossível gerenciar uma clínica de estética em expansão sem a inteligência de auditoria operacional que o L'Appui entrega."
+                    </p>
+                    <div class="testimonial-author">
+                      <div class="author-avatar">
+                        <img src="images/mariana_avatar.png" alt="Mariana Sales" class="avatar-img" />
+                      </div>
+                      <div class="author-info">
+                        <strong>Mariana Sales</strong>
+                        <span>Gestora Administrativa · Slim Clinique</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="carousel-footer">
+                  <div class="carousel-controls">
+                    <button type="button" class="carousel-btn" id="prev-testimonial" aria-label="Depoimento anterior">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="carousel-dots" id="carousel-dots">
+                      <span class="dot active" data-dot-index="0"></span>
+                      <span class="dot" data-dot-index="1"></span>
+                      <span class="dot" data-dot-index="2"></span>
+                    </div>
+                    <button type="button" class="carousel-btn" id="next-testimonial" aria-label="Próximo depoimento">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                  </div>
+                  <div class="carousel-progress-wrapper">
+                    <div class="carousel-progress-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="trust-strip">
         <div>
           <div class="section-label">Responsabilidade</div>
@@ -517,16 +1000,232 @@
         </p>
       </section>
 
+      <div class="divider"><hr /></div>
+
+      <section class="pricing-section scroll-reveal" id="planos">
+        <div class="pricing-inner">
+          <div class="section-label">Planos e Investimento</div>
+          <h2 class="section-title">O controle da sua clínica ao seu <em>alcance</em></h2>
+          <p class="section-sub">
+            Escolha o plano ideal para a sua estrutura operacional. Sem pegadinhas, com total transparência e flexibilidade.
+          </p>
+
+          <div class="pricing-toggle-wrap">
+            <span class="toggle-label active" id="billing-monthly-label">Mensal</span>
+            <label class="switch">
+              <input type="checkbox" id="billing-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label" id="billing-yearly-label">Anual <span class="discount-badge">-20%</span></span>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <div class="price-header">
+                <h3>Essencial</h3>
+                <p>Para profissionais autônomos ou clínicas iniciando sua digitalização.</p>
+                <div class="price-value">
+                  <span class="currency">R$</span>
+                  <span class="amount" data-plan-price="essencial">149</span>
+                  <span class="period">/mês</span>
+                </div>
+              </div>
+              <ul class="price-features">
+                <li>Agenda Integrada</li>
+                <li>Prontuário e Anamneses</li>
+                <li>Cadastro de até 3 profissionais</li>
+                <li>Alertas básicos de estoque</li>
+                <li>Suporte por e-mail</li>
+              </ul>
+              <a href="#demo" class="btn-ghost price-btn">Começar agora</a>
+            </article>
+
+            <article class="price-card popular">
+              <div class="popular-badge">Mais Recomendado</div>
+              <div class="price-header">
+                <h3>Profissional</h3>
+                <p>Ideal para clínicas em crescimento que necessitam de auditoria cruzada.</p>
+                <div class="price-value">
+                  <span class="currency">R$</span>
+                  <span class="amount" data-plan-price="profissional">299</span>
+                  <span class="period">/mês</span>
+                </div>
+              </div>
+              <ul class="price-features">
+                <li><strong>Tudo do Essencial</strong></li>
+                <li><strong>Painel de Auditoria Cruzada</strong></li>
+                <li>Cadastro de até 10 profissionais</li>
+                <li>Controle completo de lote/estoque</li>
+                <li>Termos de Consentimento digitais</li>
+                <li>Suporte prioritário via WhatsApp</li>
+              </ul>
+              <a href="#demo" class="btn-primary price-btn">Começar agora</a>
+            </article>
+
+            <article class="price-card">
+              <div class="price-header">
+                <h3>Clínica Integrada</h3>
+                <p>Para operações complexas que demandam máximo rastreamento e escala.</p>
+                <div class="price-value">
+                  <span class="currency">R$</span>
+                  <span class="amount" data-plan-price="integrada">599</span>
+                  <span class="period">/mês</span>
+                </div>
+              </div>
+              <ul class="price-features">
+                <li><strong>Tudo do Profissional</strong></li>
+                <li>Profissionais ilimitados</li>
+                <li>Múltiplas salas e equipamentos</li>
+                <li>API de integração e CRM</li>
+                <li>Manutenção assistida de laser</li>
+                <li>Gerente de conta exclusivo</li>
+              </ul>
+              <a href="#demo" class="btn-ghost price-btn">Falar com consultor</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><hr /></div>
+
+      <section class="faq-section scroll-reveal" id="faq">
+        <div class="faq-inner">
+          <div class="section-label">Perguntas Frequentes</div>
+          <h2 class="section-title">Respostas para as principais dúvidas</h2>
+          <p class="section-sub">Entenda como o L'Appui protege e otimiza a operação diária da sua clínica de estética.</p>
+
+          <div class="faq-search-wrap">
+            <input type="text" id="faq-search" class="faq-search-input" placeholder="Pesquisar dúvidas... Ex: prontuário, estoque" aria-label="Pesquisar perguntas frequentes" />
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item active">
+              <button type="button" class="faq-question" aria-expanded="true">
+                O L'Appui substitui o meu sistema de prontuário eletrônico atual?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Não necessariamente. O L'Appui atua como um cérebro de auditoria operacional complementar. Ele pode rodar de forma integrada ou paralela ao seu prontuário/CRM para fazer a conciliação automática das validades do estoque, alertas sanitários (ANVISA) e conformidade legal de termos e assinaturas que outros softwares costumam ignorar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                Como funciona a adequação à LGPD com prontuários de saúde?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Nossa plataforma é 100% hospedada em nuvens médicas dedicadas com criptografia de ponta a ponta. Apenas profissionais autorizados e devidamente cadastrados pela clínica podem ler os prontuários e termos de consentimento, gerando rastreabilidade total de acessos de acordo com a Lei Geral de Proteção de Dados.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                Quanto tempo demora a implantação e treinamento da equipe?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>A implantação padrão é concluída em até 5 dias úteis. Nossa equipe de Customer Success cuida da importação dos dados básicos (profissionais, agenda, lista de insumos) e realiza o treinamento ao vivo de toda a equipe administrativa e clínica para garantir uma transição sem atritos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                O L'Appui avisa sobre vencimentos de alvarás e manutenções?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>Sim! Essa é uma de nossas principais funcionalidades. A Auditoria monitora os prazos de vencimento dos alvarás sanitários, licenças de funcionamento corporativas, e calibrações/manutenções periódicas obrigatórias das máquinas de laser e criolipólise, emitindo notificações com até 30 dias de antecedência.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><hr /></div>
+
       <div class="cta-final" id="demo">
         <div class="cta-final-inner">
           <h2>Organize sua clínica com controle, clareza e segurança operacional</h2>
           <p>
-            Uma demonstração guiada mostra como o L'Appui se adapta à rotina da sua
-            clínica e quais módulos fazem mais sentido para sua operação.
+            Preencha os dados abaixo e nossa equipe entrará em contato para agendar uma demonstração exclusiva.
           </p>
-          <div class="cta-actions">
-            <a href="mailto:comercial@lappui.com.br" class="btn-gold">Solicitar demonstração</a>
-            <a href="mailto:comercial@lappui.com.br" class="btn-light">Falar com suporte</a>
+
+          <form id="lead-form" class="lead-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="clinica" name="clinica" placeholder=" " required />
+                <label for="clinica">Nome da clínica *</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="cidade" name="cidade" placeholder=" " required />
+                <label for="cidade">Cidade / UF *</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <select id="equipe" name="equipe" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="1-2">Somente eu (1-2 profissionais)</option>
+                  <option value="3-5">Pequena (3-5 profissionais)</option>
+                  <option value="5-10">Média (5-10 profissionais)</option>
+                  <option value="10+">Grande (Mais de 10 profissionais)</option>
+                </select>
+                <label for="equipe">Tamanho da equipe *</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="nome" name="nome" placeholder=" " required />
+                <label for="nome">Seu nome *</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" " required />
+                <label for="email">E-mail *</label>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="telefone" name="telefone" placeholder=" " required />
+                <label for="telefone">Telefone / WhatsApp *</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <select id="objetivo" name="objetivo" required>
+                <option value="" disabled selected hidden></option>
+                <option value="Reduzir glosas e perdas de estoque">Reduzir glosas e perdas de estoque</option>
+                <option value="Organizar prontuários e termos legais">Organizar prontuários e termos legais</option>
+                <option value="Centralizar agenda e controle financeiro">Centralizar agenda e controle financeiro</option>
+                <option value="Gerenciar múltiplos profissionais e comissões">Gerenciar múltiplos profissionais e comissões</option>
+                <option value="Outros">Outros</option>
+              </select>
+              <label for="objetivo">Objetivo com o L'Appui *</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="mensagem" name="mensagem" rows="3" placeholder=" "></textarea>
+              <label for="mensagem">Mensagem adicional (opcional)</label>
+            </div>
+
+            <div id="form-error" class="form-error-container" hidden></div>
+
+            <button type="submit" class="btn-gold">
+              <span class="btn-text">Enviar solicitação</span>
+              <span class="submit-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div id="form-success" class="form-success-container" hidden>
+            <div class="success-icon">✓</div>
+            <h3>Solicitação enviada com sucesso!</h3>
+            <p>
+              Caso seu cliente de e-mail não tenha aberto automaticamente, você pode nos contatar diretamente pelo e-mail <strong>comercial@lappui.com.br</strong>. Nossa equipe entrará em contato em breve!
+            </p>
+          </div>
+          
+          <div class="support-alternative">
+            <span>Dúvidas técnicas?</span> <a href="mailto:suporte@lappui.com.br">Falar com o suporte</a>
           </div>
         </div>
       </div>
@@ -537,6 +1236,12 @@
       <span class="footer-copy">© <span id="year"></span> L'Appui · Gestão operacional para clínicas de estética</span>
     </footer>
 
-    <script src="js/main.js"></script>
+    <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
